@@ -5,20 +5,6 @@ Back-end
 
 -   By Emmanuel Turlay, Staff Software Engineer at Cruise
 -   Weight: 1
--   Ongoing project - started 
-
-    Jul 7, 2022
-
-    , must end by 
-
-    Jul 12, 2022
-
-     - you're done with 0% of tasks.
--   Checker was released at 
-
-    Jul 8, 2022 10:00 AM
-
--   An auto review will be launched at the deadline
 
 ### Concepts
 

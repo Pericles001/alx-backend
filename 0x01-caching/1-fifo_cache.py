@@ -32,9 +32,10 @@ class FIFOCache(BasicCaching):
                 self.cache_data[key] = item
                 return
 
-            if len(self.cache_data) == self.capacity:
-                self.cache_data.popitem(last=False)
-                print("DISCARD:", self.key_indexes.pop(0))
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+                item_discarded = self.key_indexes.pop(0)
+                del self.cache_data[item_discarded]
+                print("DISCARD:", item_discarded)
 
             self.cache_data[key] = item
             self.key_indexes.append(key)

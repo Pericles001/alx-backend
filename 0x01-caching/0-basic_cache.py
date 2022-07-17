@@ -12,7 +12,6 @@ class BasicCache(BasicCaching):
     Basic Cache class that inherits from BasicCaching
     """
 
-
     def put(self, key, item):
         """
         Must assign to the dictionary self.cache_data
@@ -20,7 +19,6 @@ class BasicCache(BasicCaching):
         """
         if key and item:
             self.cache_data[key] = item
-
 
     def get(self, key):
         """

@@ -22,7 +22,7 @@ class LIFOCache(BasicCaching):
     def put(self, key, item):
         """
         Must assign to the dictionary self.cache_data
-        the item value for the key key
+        the item value for the key key.
         """
         if key and item:
             if len(self.cache_data) >= self.MAX_ITEMS:
@@ -32,7 +32,7 @@ class LIFOCache(BasicCaching):
                 else:
                     del self.cache_data[self.key_indexes[self.MAX_ITEMS - 1]]
                     item_discarded = self.key_indexes.pop(self.MAX_ITEMS - 1)
-                    print("DISCARD: ", item_discarded)
+                    print("DISCARD:", item_discarded)
 
             self.cache_data[key] = item
             self.key_indexes.append(key)

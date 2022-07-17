@@ -4,7 +4,7 @@ Basic ditionary
 """
 
 
-BasicCaching = __import__('base_caching').BasicCaching
+BasicCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BasicCaching):

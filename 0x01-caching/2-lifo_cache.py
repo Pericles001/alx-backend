@@ -4,10 +4,10 @@ LIFO Caching
 """
 
 
-BasicCaching = __import__('base_caching').BaseCaching
+BaseCaching = __import__('base_caching').BaseCaching
 
 
-class LIFOCache(BasicCaching):
+class LIFOCache(BaseCaching):
     """
      class LIFOCache that inherits from BaseCaching and is a caching system
     """

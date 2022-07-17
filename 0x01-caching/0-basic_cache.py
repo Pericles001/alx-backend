@@ -4,12 +4,12 @@ Basic ditionary
 """
 
 
-BasicCaching = __import__('base_caching').BaseCaching
+BaseCaching = __import__('base_caching').BaseCaching
 
 
-class BasicCache(BasicCaching):
+class BasicCache(BaseCaching):
     """
-    Basic Cache class that inherits from BasicCaching
+    Basic Cache class that inherits from BaseCaching
     """
 
     def put(self, key, item):

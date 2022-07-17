@@ -3,10 +3,10 @@
 FIFO Caching
 """
 
-BasicCaching = __import__('base_caching').BaseCaching
+BaseCaching = __import__('base_caching').BaseCaching
 
 
-class FIFOCache(BasicCaching):
+class FIFOCache(BaseCaching):
     """
     a class FIFOCache that inherits from BaseCaching and is a caching system
     """
@@ -28,7 +28,7 @@ class FIFOCache(BasicCaching):
                 self.cache_data[key] = item
                 return
 
-            if len(self.cache_data) >= BasicCaching.MAX_ITEMS:
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 item_discarded = self.key_indexes.pop(0)
                 del self.cache_data[item_discarded]
                 print("DISCARD:", item_discarded)

@@ -3,10 +3,6 @@
 FIFO Caching
 """
 
-
-from collections import deque
-
-
 BasicCaching = __import__('base_caching').BaseCaching
 
 

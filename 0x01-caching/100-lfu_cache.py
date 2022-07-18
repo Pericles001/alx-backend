@@ -1,34 +1,33 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+""" 5. LFU Caching
 """
-LFU Caching
-"""
-
 
 from enum import Enum
+from heapq import heappush, heappop
 from itertools import count
-from typing import OrderedDict
 
-
-BaseCaching = __import__('base_caching').BaseCaching
+BaseCaching = __import__("base_caching").BaseCaching
 
 
 class HeapItemStatus(Enum):
-    """
-    Heap item status
+    """ HeapItemStatus class.
     """
     ACTIVE = 1
     INACTIVE = 2
 
 
 class LFUCache(BaseCaching):
+    """ Create a class LFUCache that inherits from BaseCaching and is a caching
+    system
     """
-     class LFUCache that inherits from BaseCaching and is a caching system
-    """
-    def __init__(self) -> None:
+
+    def __init__(self):
+        """ Init
+        """
         super().__init__()
         self.heap = []
         self.map = {}
-        self.count = count()
+        self.counter = count()
 
     def put(self, key, item):
         """ Must assign to the dictionary self.cache_data the item value for

@@ -4,7 +4,7 @@ MRU Caching
 """
 
 
-from typing import OrderedDict
+from collections import OrderedDict
 
 
 BaseCaching = __import__('base_caching').BaseCaching
@@ -37,6 +37,8 @@ class MRUCache(BaseCaching):
 
         if len(self.mru_order) > BaseCaching.MAX_ITEMS:
             self.mru_order.popitem(last=False)
+
+        self.mru_order.move_to_end(key, False)
 
     def get(self, key):
         """

@@ -11,7 +11,7 @@ app = Flask(__name__)
 babel = Babel(app)
 
 
-class Config(object):
+class Config:
     """
     Config class
     """

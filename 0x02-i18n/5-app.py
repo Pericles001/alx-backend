@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
+
 """
-Mock logging in
+5. Basic Flask app
 """
 
-from crypt import methods
-import babel
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
 
@@ -14,7 +13,7 @@ babel = Babel(app)
 
 class Config:
     """
-    Config class
+    Config class.
     """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -33,7 +32,7 @@ users = {
 
 def get_user(login_as):
     """
-    get_user
+    get_user.
     """
     try:
         return users.get(int(login_as))
@@ -44,7 +43,7 @@ def get_user(login_as):
 @app.before_request
 def before_request():
     """
-    before request
+    before_request
     """
     g.user = get_user(request.args.get("login_as"))
 
@@ -52,21 +51,21 @@ def before_request():
 @babel.localeselector
 def get_locale():
     """
-    get_locale
+    get_locale.
     """
-    locale = requests.args.get("locale")
+    locale = request.args.get("locale")
     if locale:
         return locale
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-@app.route('/', methods=['GET'], strict_slashes=False)
-def index():
+@app.route('/', methods=["GET"], strict_slashes=False)
+def hello():
     """
-    hello world
+    hello.
     """
     return render_template('5-index.html')
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port="5000")
